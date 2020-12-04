@@ -11,11 +11,6 @@ import Accordian from './components/Accordian'
 
 
 
-
-
-
-
-
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -39,7 +34,7 @@ export default function App() {
 					}
 				})}
 				tabBarOptions={{
-					activeTintColor: 'tomato',
+					activeTintColor: '#D4AFCD',
 					inactiveTintColor: 'gray'
 				}}
 			>
