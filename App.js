@@ -5,6 +5,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './screens/HomeScreen';
 import EventScreen from './screens/EventScreen';
 import ContactScreen from './screens/ContactScreen';
+import FormScreen from './screens/FormScreen'
+import DrawerScreen from './screens/DrawerScreen'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import CounterText from './components/CounterText';
 import Accordian from './components/Accordian'
@@ -27,6 +29,8 @@ export default function App() {
 							iconName = focused ? 'ios-easel' : 'ios-easel';
 						} else if (route.name === 'Contact') {
 							iconName = focused ? 'ios-paw' : 'ios-paw';
+						} else if (route.name === 'Form') {
+							iconName = focused ? 'ios-attach' : 'ios-attach';
 						}
 
 						// You can return any component that you like here!
@@ -41,6 +45,8 @@ export default function App() {
 				<Tab.Screen name="Home" component={HomeScreen} />
 				<Tab.Screen name="Event" component={EventScreen} />
 				<Tab.Screen name="Contact" component={ContactScreen} />
+				<Tab.Screen name="Form" component={FormScreen} />
+				<Tab.Screen name="Drawer" component={DrawerScreen} />
 			</Tab.Navigator>
 		</NavigationContainer>
 	);
