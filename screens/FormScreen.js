@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, ActivityIndicator, ImageBackground } from 'react-native';
+import { View, ActivityIndicator, ImageBackground } from 'react-native';
 import styles from '../stylesheet';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Card, ListItem, Button, Icon, Image } from 'react-native-elements';
+import { Header, Text, PricingCard, Card, ListItem, Button, Icon, Image } from 'react-native-elements';
 import jonsnow from '../assets/jonsnow.png';
 
 const users = [
@@ -21,6 +21,20 @@ const users = [
 function mainScreen() {
 	return (
 		<View style={styles.container}>
+			<Header
+				leftComponent={{ icon: 'menu', color: '#fff' }}
+				centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
+				rightComponent={{ icon: 'home', color: '#fff' }}
+			/>
+			<Text h1>React Native Element</Text>
+			<Text h4>This is an exploration with React Native Element.</Text>
+			<PricingCard
+				color="#4f9deb"
+				title="Free"
+				price="$0"
+				info={[ '1 User', 'Basic Support', 'All Core Features' ]}
+				button={{ title: 'GET STARTED', icon: 'flight-takeoff' }}
+			/>
 			<Card containerStyle={{ padding: 0 }}>
 				<Card.Title>CARD WITH DIVIDER</Card.Title>
 				<Card.Divider />
@@ -28,7 +42,6 @@ function mainScreen() {
 					return <ListItem key={i} roundAvatar title={u.name} leftAvatar={{ source: { uri: u.avatar } }} />;
 				})}
 			</Card>
-
 			<Card>
 				<Card.Title>HELLO WORLD</Card.Title>
 				<Card.Divider />
@@ -43,12 +56,8 @@ function mainScreen() {
 					title="VIEW NOW"
 				/>
 			</Card>
-			<Image
-				source={jonsnow}
-				style={{ width: 200, height: 200 }}
-				PlaceholderContent={<ActivityIndicator />}
-			/>
-            <Image source={jonsnow} style={styles.contactImage}/>
+			<Image source={jonsnow} style={{ width: 200, height: 200 }} PlaceholderContent={<ActivityIndicator />} />
+			<Image source={jonsnow} style={styles.contactImage} />
 		</View>
 	);
 }

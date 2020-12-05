@@ -31,6 +31,8 @@ export default function App() {
 							iconName = focused ? 'ios-paw' : 'ios-paw';
 						} else if (route.name === 'Form') {
 							iconName = focused ? 'ios-attach' : 'ios-attach';
+						} else if (route.name === 'Drawer') {
+							iconName = focused ? 'ios-images' : 'ios-images';
 						}
 
 						// You can return any component that you like here!
